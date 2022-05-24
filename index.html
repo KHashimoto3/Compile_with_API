@@ -17,8 +17,11 @@
       <p>
         次のテキストエリアに任意のプログラムを入力して、実行を押してください。
       </p>
-      <textarea cols="100" rows="30"> </textarea>
+      <textarea cols="100" rows="30" v-model="code"> </textarea><br />
       <button>実行！</button>
+      <pre>
+          {{code}}
+      </pre>
     </div>
     <script src="js/main.js"></script>
   </body>
