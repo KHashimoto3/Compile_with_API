@@ -11,8 +11,6 @@ const App = {
       if (this.code == "") {
         alert("コードを入力してから押してください！");
       } else {
-        alert("実行します！");
-
         const data_obj = {
           code: this.code,
           options: "warning,gnu++1y",
