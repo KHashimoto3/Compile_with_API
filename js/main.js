@@ -14,12 +14,20 @@ const App = {
         alert("実行します！");
 
         const data_obj = {
+          code: this.code,
+          options: "warning,gnu++1y",
+          compiler: "gcc-head",
+          "compiler-option-raw": "-Dx=hogefuga\n-O3",
+        };
+
+        /*
+        const data_obj = {
           code:
             '#include <iostream>\nint main() { int x = 0; std::cout << "hoge" << std::endl; }',
           options: "warning,gnu++1y",
           compiler: "gcc-head",
           "compiler-option-raw": "-Dx=hogefuga\n-O3",
-        };
+        };*/
 
         const url = "https://wandbox.org/api/compile.json";
 
