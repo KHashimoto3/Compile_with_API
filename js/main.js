@@ -2,7 +2,8 @@ const App = {
   data() {
     return {
       code: "",
-      result_txt: "",
+      output_txt: "",
+      err_txt: "",
     };
   },
   methods: {
@@ -36,7 +37,10 @@ const App = {
                 throw new Error(err_msg);
             }
           } else {
-            this.result_txt = await response.json();
+            const response_data = await response.json();
+            this.output_txt = response_data.program_output;
+            this.err_txt = response_data.compiler_message;
+            console.log(response_data);
           }
         } catch (err_msg) {
           alert(err_msg);
