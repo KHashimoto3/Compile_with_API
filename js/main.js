@@ -2,6 +2,7 @@ const App = {
   data() {
     return {
       code: "",
+      input: "",
       output_txt: "",
       err_txt: "",
     };
@@ -11,12 +12,23 @@ const App = {
       if (this.code == "") {
         alert("コードを入力してから押してください！");
       } else {
-        const data_obj = {
-          code: this.code,
-          options: "warning,gnu++1y",
-          compiler: "gcc-head",
-          "compiler-option-raw": "-Dx=hogefuga\n-O3",
-        };
+        let data_obj;
+        if (this.input != "") {
+          data_obj = {
+            code: this.code,
+            stdin: this.input,
+            options: "warning,gnu++1y",
+            compiler: "gcc-head",
+            "compiler-option-raw": "-Dx=hogefuga\n-O3",
+          };
+        } else {
+          data_obj = {
+            code: this.code,
+            options: "warning,gnu++1y",
+            compiler: "gcc-head",
+            "compiler-option-raw": "-Dx=hogefuga\n-O3",
+          };
+        }
 
         /*
         const data_obj = {
